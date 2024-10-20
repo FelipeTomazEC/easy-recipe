@@ -14,3 +14,7 @@ class IndexView(generic.ListView):
             return Ingredient.objects.filter(FilterParam(name__icontains=search) | FilterParam(ean__icontains=search))
         
         return Ingredient.objects.all()
+    
+class IngredientDetailsView(generic.DetailView):
+    template_name = "ingredients/ingredient_details.html"
+    model = Ingredient

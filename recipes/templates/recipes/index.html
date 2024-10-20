@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recipes</title>
+    </head>
+    <body>
+        <header>
+            <h1>Managing recipes is simple and easy...</h1>
+            {% if recipe_list %}
+            <ul>
+                {% for recipe in  recipe_list %}
+                <li>
+                    {{ recipe.name }}
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <p>No recipes found.</p>
+            {% endif %}
+        </header>
+    </body>
+</html>

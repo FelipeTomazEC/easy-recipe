@@ -27,6 +27,8 @@
         {% else %}
             <span> No ingredients found.</span>
         {% endif %}
+
+        <a href={% url 'ingredients:add_ingredient' %}> Add ingredient</a>
     </main>
 </body>
 </html>

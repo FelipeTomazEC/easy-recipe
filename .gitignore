@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+db.sqlite3
+
+# Local environment
+.env
+*.env
+
+# Static and media files
+staticfiles/
+media/
+
+# Ignore local virtual environments
+.env/
+
+# VS Code and JetBrains IDEs
+.vscode/
+.idea/
+
+# Mac OS files
+.DS_Store
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+
+# pytest
+.pytest_cache/
+
+# Backup files
+*.bak
+*.swp
+*.swo

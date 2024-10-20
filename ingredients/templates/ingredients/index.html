@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredients</title>
+    <link rel="stylesheet" href="{% static "ingredients/style.css" %}">
+</head>
+<body>
+    <header>
+        <h1>Managing ingredients has just become easy and fun!</h1>
+    </header>
+    <main>
+        <form method="GET" action="">
+            <input type="text" name="search_param" placeholder="Search by name or EAN" value="{{ request.GET.search_param }}">
+            <button type="submit">Search</button>
+        </form>
+        {% if ingredient_list %}
+            <ul>
+                {% for ingredient in ingredient_list %}
+                    <li>
+                        <a href={% url 'ingredients:details' ingredient.ean %}> {{ingredient.name}} </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <span> No ingredients found.</span>
+        {% endif %}
+    </main>
+</body>
+</html>

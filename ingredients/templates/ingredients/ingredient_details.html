@@ -15,6 +15,7 @@
             <h1>{{ingredient.name}}</h1>
             <h2>EAN: {{ingredient.ean}}</h2>
             <p>Price: {{ingredient.cost_per_unit}} ({{ingredient.standard_amount}} {{ingredient.standard_unit}}{{ingredient.standard_amount|pluralize}})</p>
+            <a href={% url "ingredients:edit_ingredient" ingredient.ean %}>Edit ingredient</a>
         </main>
     </body>
 </html>

@@ -26,3 +26,9 @@ class AddIngredientView(generic.CreateView):
     form_class = AddIngredientForm
     template_name = "ingredients/add_ingredient.html"
     success_url = reverse_lazy('ingredients:index')
+
+class EditIngredientView(generic.UpdateView):
+    model = Ingredient
+    form_class = AddIngredientForm
+    template_name = "ingredients/edit_ingredient.html"
+    success_url = reverse_lazy('ingredients:index')

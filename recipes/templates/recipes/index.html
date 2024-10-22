@@ -8,6 +8,8 @@
     <body>
         <header>
             <h1>Managing recipes is simple and easy...</h1>
+        </header>
+        <main>
             {% if recipe_list %}
             <ul>
                 {% for recipe in  recipe_list %}
@@ -19,6 +21,8 @@
             {% else %}
                 <p>No recipes found.</p>
             {% endif %}
-        </header>
+
+            <a href={% url "recipes:add_recipe" %}>Add new recipe</a>
+        </main>
     </body>
 </html>

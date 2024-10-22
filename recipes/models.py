@@ -1,6 +1,7 @@
 from functools import reduce
 from django.core.validators import MinValueValidator, MinLengthValidator
 from django.db import models
+from djmoney.money import Money
 
 from ingredients.models import Ingredient
 
@@ -11,7 +12,9 @@ class Recipe(models.Model):
 
     def get_total_cost(self):
         recipe_ingredients = RecipeIngredient.objects.filter(recipe=self)
-        return reduce(lambda ingredientOne, ingredientTwo: ingredientOne.get_cost() + ingredientTwo.get_cost(), recipe_ingredients)
+        individual_ingredients_cost = map(lambda ingredient: ingredient.get_cost(), recipe_ingredients)
+        total_cost = reduce(lambda cost_one, cost_two: cost_one + cost_two, individual_ingredients_cost, Money(0, 'EUR'))
+        return total_cost
 
 class RecipeIngredient(models.Model):
     ingredient = models.ForeignKey(Ingredient, on_delete=models.RESTRICT)

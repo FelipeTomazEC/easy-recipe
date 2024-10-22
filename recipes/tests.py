@@ -46,3 +46,14 @@ class RecipeModelTests(TestCase):
         recipe_total_cost = recipe.get_total_cost()
 
         self.assertEqual(recipe_total_cost, Money(7, 'EUR'))
+    
+    def test_get_recipe_cost_single_ingredient(self):
+        recipe = Recipe.objects.create(name="Single ingredient recipe")
+
+        ingredient = create_test_ingredient(cost=5)
+
+        RecipeIngredient.objects.create(recipe=recipe, ingredient=ingredient, amount=2)
+
+        recipe_total_cost = recipe.get_total_cost()
+
+        self.assertEqual(recipe_total_cost, Money(10, 'EUR'))

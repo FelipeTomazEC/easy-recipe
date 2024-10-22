@@ -16,6 +16,10 @@ class SeeAllRecipesView(generic.ListView):
     def get_queryset(self):
         return Recipe.objects.all()
 
+class RecipeDetailsView(generic.DetailView):
+    template_name = 'recipes/recipe_details.html'
+    model = Recipe
+
 class AddRecipeView(generic.TemplateView):
     template_name = 'recipes/add_recipe.html'
 

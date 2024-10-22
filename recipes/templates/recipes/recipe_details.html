@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recipe details</title>
+    </head>
+    <body>
+        <header>
+            <h6>
+                <a href="{% url "recipes:index" %}">See all recipes</a>
+            </h6>
+        </header>
+        <main>
+            <h1>{{recipe.name}}</h1>
+            <h2>Cost: {{recipe.get_total_cost}}</h2>
+            <table class="ingredients">
+                <caption>Ingredients</caption>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for recipe_ingredient in recipe.recipeingredient_set.all %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{recipe_ingredient.ingredient.name}}</td>
+                            <td>{{recipe_ingredient.amount}} {{recipe_ingredient.ingredient.standard_unit}}</td>
+                            <td>{{recipe_ingredient.get_cost}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>

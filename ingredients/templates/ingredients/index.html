@@ -20,7 +20,7 @@
             <ul>
                 {% for ingredient in ingredient_list %}
                     <li>
-                        <a href={% url 'ingredients:details' ingredient.ean %}> {{ingredient.name}} </a>
+                        <a href="{% url 'ingredients:details' ingredient.ean %}"> {{ingredient.name}} </a>
                     </li>
                 {% endfor %}
             </ul>
@@ -28,7 +28,7 @@
             <span> No ingredients found.</span>
         {% endif %}
 
-        <a href={% url 'ingredients:add_ingredient' %}> Add ingredient</a>
+        <a href="{% url 'ingredients:add_ingredient' %}"> Add ingredient</a>
     </main>
 </body>
 </html>

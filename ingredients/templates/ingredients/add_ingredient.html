@@ -10,7 +10,7 @@
             <h1>Add a new ingredient to your inventory...</h1>
         </header>
         <main>
-            <form action={% url "ingredients:add_ingredient" %} method="POST">
+            <form action="{% url "ingredients:add_ingredient" %}" method="POST">
                 {% csrf_token %}
                 {{ form }}
                 <input type="submit" value="Add ingredient">

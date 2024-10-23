@@ -12,7 +12,7 @@
             <h1>Add a new recipe...</h1>
         </header>
         <main>
-            <form action={% url "recipes:add_recipe" %} method="POST">
+            <form action="{% url "recipes:add_recipe" %}" method="POST">
                 {% csrf_token %}
 
                 <label for="name">Recipe name</label>
@@ -50,6 +50,6 @@
             </form>
         </main>
         {{ingredient_list|json_script:"ingredient_list"}}
-        <script src={% static "recipes/add_ingredient.js" %}></script>
+        <script src="{% static "recipes/add_ingredient.js" %}"></script>
     </body>
 </html>

@@ -10,7 +10,7 @@
             <h1>Edit ingredient</h1>
         </header>
         <main>
-            <form action={% url "ingredients:edit_ingredient" ingredient.ean %} method="POST">
+            <form action="{% url "ingredients:edit_ingredient" ingredient.ean %}" method="POST">
                 {% csrf_token %}
                 {{ form }}
                 <input type="submit" value="Save changes">

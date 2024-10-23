@@ -17,7 +17,7 @@
                     <h2>{{ recipe.name }}</h2>
                     <p>Number of ingredients: {{recipe.ingredients.count}}</p>
                     <strong>Total cost: {{recipe.get_total_cost}}</strong>
-                    <a href={% url "recipes:details" recipe.id%}>See details</a>
+                    <a href="{% url "recipes:details" recipe.id%}">See details</a>
                 </li>
                 {% endfor %}
             </ul>
@@ -25,7 +25,7 @@
                 <p>No recipes found.</p>
             {% endif %}
 
-            <a href={% url "recipes:add_recipe" %}>Add new recipe</a>
+            <a href="{% url "recipes:add_recipe" %}">Add new recipe</a>
         </main>
     </body>
 </html>

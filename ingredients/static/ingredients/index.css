@@ -1,0 +1,174 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f7f8fa;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 120rem; 
+    margin: 0 auto;
+}
+
+/* Header styling */
+#ingredients-header {
+    background-color: #2ecc71;
+    color: white;
+    padding: 2rem 0; 
+    text-align: center;
+    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1); 
+}
+
+#ingredients-header h1 {
+    font-size: 4rem; 
+    margin-bottom: 1rem; 
+}
+
+/* Search form styling */
+#search-form {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0; 
+}
+
+#search-form input {
+    padding: 1rem; 
+    width: 30rem; 
+    border: 0.2rem solid #bdc3c7; 
+    border-radius: 0.5rem; 
+    font-size: 2rem; 
+    outline: none;
+}
+
+#search-form input:focus {
+    border-color: #2ecc71;
+}
+
+#search-form button {
+    padding: 1rem 2rem; 
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    margin-left: 1rem; 
+    border-radius: 0.5rem; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#search-form button:hover {
+    background-color: #27ae60;
+}
+
+/* Ingredient list styling */
+#ingredient-list {
+    list-style-type: none;
+    margin: 2rem 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: start;
+}
+
+.ingredient-item {
+    position: relative;
+    width: 25rem; 
+    height: 10rem; 
+    background-color: #E5FFE2;
+    border-radius: 1rem; 
+    padding: 0.5rem;
+    border: #2ecc71 solid 0.2rem;
+}
+
+.ingredient-item .name {
+    font-size: 2rem; 
+}
+
+.ingredient-item .price {
+    font-size: 1.5rem;
+}
+
+.ingredient-item a {
+    width: fit-content;
+    height: 3rem;
+    text-decoration: none;
+    color: #101113;
+    font-size: 1.25rem; 
+    padding: 1rem; 
+    border: 0.1rem solid #bdc3c7; 
+    border-radius: 0.5rem; 
+    transition: background-color 0.3s, color 0.3s;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+    background-color: #81dfa8;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ingredient-item a:hover {
+    background-color: #ecf0f1;
+    color: #2ecc71;
+}
+
+/* No ingredients message */
+#no-ingredients-message {
+    display: block;
+    text-align: center;
+    color: #e74c3c;
+    margin-top: 2rem; 
+    font-size: 2rem; 
+}
+
+/* Add ingredient button */
+#add-ingredient-button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 1.5rem 3rem; 
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 0.5rem; 
+    margin-top: 3rem; 
+    transition: background-color 0.3s;
+    background-color: #2ecc71;
+    position: fixed;
+    right: 5rem;
+    bottom: 5rem;
+}
+
+#add-ingredient-button:hover {
+    background-color: #27ae60;
+}
+
+/* Responsive Design */
+@media (max-width: 76.8rem) { 
+    #ingredients-header h1 {
+        font-size: 2rem; 
+    }
+
+    #search-form input {
+        width: 100%;
+    }
+
+    #add-ingredient-button {
+        display: block;
+        margin: 3rem auto; 
+    }
+}

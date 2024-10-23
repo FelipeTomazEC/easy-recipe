@@ -5,30 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingredients</title>
-    <link rel="stylesheet" href="{% static "ingredients/style.css" %}">
+    <link rel="stylesheet" href="{% static 'ingredients/index.css' %}">
 </head>
 <body>
-    <header>
-        <h1>Managing ingredients has just become easy and fun!</h1>
+    <header id="ingredients-header">
+        <div class="container">
+            <h1>Managing ingredients has just become easy and fun!</h1>
+        </div>
     </header>
-    <main>
-        <form method="GET" action="">
+    <main class="container">
+        <form method="GET" action="" id="search-form">
             <input type="text" name="search_param" placeholder="Search by name or EAN" value="{{ request.GET.search_param }}">
             <button type="submit">Search</button>
         </form>
+
         {% if ingredient_list %}
-            <ul>
+            <ul id="ingredient-list">
                 {% for ingredient in ingredient_list %}
-                    <li>
-                        <a href="{% url 'ingredients:details' ingredient.ean %}"> {{ingredient.name}} </a>
+                    <li class="ingredient-item">
+                        <div class="ingredient-item">
+                            <h3 class="name">{{ingredient.name}}</h3>
+                            <span class="price">Cost per unit({{ingredient.standard_unit}}): {{ingredient.cost_per_unit}}</span>
+                            <a href="{% url 'ingredients:details' ingredient.ean %}"> See details </a>
+                        </div>
                     </li>
                 {% endfor %}
             </ul>
         {% else %}
-            <span> No ingredients found.</span>
+            <span id="no-ingredients-message"> No ingredients found.</span>
         {% endif %}
 
-        <a href="{% url 'ingredients:add_ingredient' %}"> Add ingredient</a>
+        <a href="{% url 'ingredients:add_ingredient' %}" id="add-ingredient-button"> Add Ingredient</a>
     </main>
 </body>
 </html>

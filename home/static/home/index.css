@@ -1,0 +1,97 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f8fa;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    font-family: 'Georgia', serif;
+    color: #2c3e50;
+}
+
+/* Header styling */
+#main-header {
+    background-color: #f39c12;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#main-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#main-header h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Main section styling */
+main {
+    margin: 50px 0;
+}
+
+#action-section {
+    text-align: center;
+}
+
+#action-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* App links section */
+.app-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.app-links .button {
+    text-decoration: none;
+    background-color: #3498db;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.app-links .button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #main-header h1 {
+        font-size: 2.5rem;
+    }
+
+    #main-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .app-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .app-links .button {
+        font-size: 1.15rem;
+    }
+}

@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  database:
+    container_name: easy-recipe-database
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+volumes:
+  db:

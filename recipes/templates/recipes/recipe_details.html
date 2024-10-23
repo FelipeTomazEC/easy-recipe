@@ -35,6 +35,7 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <a href={% url "recipes:edit_recipe" recipe.id%}>Edit Recipe</a>
         </main>
     </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Recipe - Home</title>
+</head>
+<body>
+    <header>
+        <h1>Easy Recipe</h1>
+        <h2>Effortless recipe management at your fingertips.</h2>
+    </header>
+    <main>
+        <section>
+            <h1>What you wanna do now?</h1>
+            <div class="app-links">
+                <a href="{% url "ingredients:index" %}">Manage ingredients</a>
+                <a href="{% url "recipes:index" %}">Manage recipes</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

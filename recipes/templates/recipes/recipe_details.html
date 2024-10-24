@@ -17,7 +17,7 @@
         <main class="container">
             <section class="recipe-details">
                 <h1 class="recipe-name">{{recipe.name}}</h1>
-                <h2 class="recipe-cost">Total Cost: {{recipe.get_total_cost}}</h2>
+                <h2 class="recipe-cost">Total Cost: {{recipe.get_total_cost_in_eur}}</h2>
             </section>
 
             <section class="ingredient-details">
@@ -37,7 +37,7 @@
                                 <td>{{forloop.counter}}</td>
                                 <td>{{recipe_ingredient.ingredient.name}}</td>
                                 <td>{{recipe_ingredient.amount}} {{recipe_ingredient.ingredient.standard_unit}}</td>
-                                <td>{{recipe_ingredient.get_cost}}</td>
+                                <td>{{recipe_ingredient.get_cost_in_eur}}</td>
                             </tr>
                         {% endfor %}
                     </tbody>

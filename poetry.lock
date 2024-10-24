@@ -32,6 +32,17 @@ files = [
 dev = ["freezegun (>=1.0,<2.0)", "pytest (>=6.0)", "pytest-cov"]
 
 [[package]]
+name = "currencyconverter"
+version = "0.17.33"
+description = "A currency converter using the European Central Bank data."
+optional = false
+python-versions = ">=3.6.1"
+files = [
+    {file = "CurrencyConverter-0.17.33-py3-none-any.whl", hash = "sha256:30bdc91b47e2dce3939f6eebc744fabafd7bed06e286f59077e379d5d3902e7a"},
+    {file = "currencyconverter-0.17.33.tar.gz", hash = "sha256:652b0f817d84aa9c677afd773eb657ccf51fcc53efcd19e4c3859404b5a9a12d"},
+]
+
+[[package]]
 name = "django"
 version = "5.1.2"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -290,4 +301,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "ce1f488c525c0dfe5869ca01b4ff121c7cc9fdedc4c9c216abd51214c8a1b1b7"
+content-hash = "d5de8cefe00a40cc687e3a37815b270c0d96c444add1aed509e67c37c16a183f"

@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'ingredients/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'ingredients/add-ingredient.css' %}">
         <title>Add new ingredient</title>
     </head>
     <body>
         <header>
-            <h1>Add a new ingredient to your inventory...</h1>
+            <div class="container">
+                <h1>Add a new ingredient to your inventory...</h1>
+            </div>
         </header>
-        <main>
+        <main class="container">
             <form action="{% url "ingredients:add_ingredient" %}" method="POST">
                 {% csrf_token %}
                 {{ form }}
-                <input type="submit" value="Add ingredient">
+                <input type="submit" class="button add-ingredient-button" value="Add ingredient">
             </form>
         </main>
     </body>

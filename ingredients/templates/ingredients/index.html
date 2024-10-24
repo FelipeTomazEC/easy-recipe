@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingredients</title>
+    <link rel="stylesheet" href="{% static 'ingredients/styles.css' %}">
     <link rel="stylesheet" href="{% static 'ingredients/index.css' %}">
 </head>
 <body>
-    <header id="ingredients-header">
+    <header>
         <div class="container">
             <h1>Managing ingredients has just become easy and fun!</h1>
         </div>
     </header>
-    <main class="container">
+    <main>
         <form method="GET" action="" id="search-form">
             <input type="text" name="search_param" placeholder="Search by name or EAN" value="{{ request.GET.search_param }}">
-            <button type="submit">Search</button>
+            <button class="button" type="submit">Search</button>
         </form>
 
         {% if ingredient_list %}
@@ -35,7 +36,7 @@
             <span id="no-ingredients-message"> No ingredients found.</span>
         {% endif %}
 
-        <a href="{% url 'ingredients:add_ingredient' %}" id="add-ingredient-button"> Add Ingredient</a>
+        <a href="{% url 'ingredients:add_ingredient' %}" class="button" id="add-ingredient-button"> Add Ingredient</a>
     </main>
 </body>
 </html>

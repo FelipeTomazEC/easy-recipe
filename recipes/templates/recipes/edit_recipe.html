@@ -4,23 +4,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static "recipes/add_ingredient_form.css" %}">
-        <title>Add new recipe</title>
+        <link rel="stylesheet" href="{% static 'recipes/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'recipes/add-recipe.css' %}">
+        <title>Easy Recipe - Edit Recipe</title>
     </head>
     <body>
         <header>
-            <h1>Add a new recipe...</h1>
+            <div class="container">
+                <h1>Edit a recipe</h1>
+            </div>
         </header>
         <main>
             <form action="{% url "recipes:edit_recipe" recipe.id %}" method="POST">
                 {% csrf_token %}
-
-                <label for="name">Recipe name</label>
-                <input type="text" name="name" id="name" value="{{ name|default:"" }}">
-                {% if errors.name %}
-                    <span class="error">{{errors.name.0}}</span>
-                {% endif %}
-
+                <div class="recipe-name-input-container">
+                    <label for="name">Recipe name</label>
+                    <input type="text" name="name" id="name" value="{{ name|default:"" }}">
+                    {% if errors.name %}
+                        <span class="error">{{errors.name.0}}</span>
+                    {% endif %}
+                </div>
+                
                 <section class="ingredients">
                     <h2>Ingredients</h2>
                     {% if errors.ingredients %}
@@ -40,15 +44,18 @@
                                 </select>
                                 <label for="amount">Amount</label>
                                 <input type="number" name="ingredients[{{forloop.counter0}}][amount]" id="amount" min="0" step="0.1" value="{{ingredient.amount}}">
-                                <button type="button" class="remove-ingredient-btn">Remove</button>
+                                <button type="button" class="remove-ingredient-btn cancel-button">Remove</button>
                             </fieldset>    
                         {% endfor %}
                     {% endif %}
                 </section>
                 
-                <button type="button" onclick="createRecipeIngredient()">Add ingredient</button>
-                <input type="submit" value="Save Recipe">
-                <a href="{% url "recipes:details" recipe.id%}">Cancel</a>
+                <button class="button add-ingredient-button" type="button" onclick="createRecipeIngredient()">Add ingredient</button>
+
+                <div class="action-buttons">
+                    <input class="button" type="submit" value="Save Recipe">
+                    <a class="cancel-button" href="{% url "recipes:details" recipe.id%}">Cancel</a>
+                </div>
             </form>
         </main>
         {{ingredient_list|json_script:"ingredient_list"}}

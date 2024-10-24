@@ -35,8 +35,11 @@
         {% else %}
             <span id="no-ingredients-message"> No ingredients found.</span>
         {% endif %}
-
-        <a href="{% url 'ingredients:add_ingredient' %}" class="button" id="add-ingredient-button"> Add Ingredient</a>
+        
+        <nav>
+            <a href="{% url 'ingredients:add_ingredient' %}" class="button"> Add Ingredient</a>
+            <a href="{% url 'home:index' %}" class="button cancel-button">Home</a>
+        </nav>  
     </main>
 </body>
 </html>

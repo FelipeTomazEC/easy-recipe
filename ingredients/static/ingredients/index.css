@@ -75,8 +75,11 @@
     font-size: 2rem; 
 }
 
-/* Add ingredient button */
-#add-ingredient-button {
+nav {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
     position: fixed;
     right: 5rem;
     bottom: 5rem;

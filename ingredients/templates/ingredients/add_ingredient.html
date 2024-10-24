@@ -11,14 +11,18 @@
     <body>
         <header>
             <div class="container">
-                <h1>Add a new ingredient to your inventory...</h1>
+                <h1>Add a new ingredient to your inventory</h1>
             </div>
         </header>
         <main class="container">
             <form action="{% url "ingredients:add_ingredient" %}" method="POST">
                 {% csrf_token %}
                 {{ form }}
-                <input type="submit" class="button add-ingredient-button" value="Add ingredient">
+
+                <div class="action-buttons">
+                    <input type="submit" class="button" value="Save">
+                    <a class="cancel-button" href="{% url "ingredients:index" %}">Cancel</a>
+                </div>
             </form>
         </main>
     </body>

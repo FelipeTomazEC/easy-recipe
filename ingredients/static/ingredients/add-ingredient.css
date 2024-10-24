@@ -1,5 +1,9 @@
-.add-ingredient-button {
+.action-buttons {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
     position: fixed;
-    right: 2rem;
-    bottom: 2rem;
+    right: 3rem;
+    bottom: 3rem;
 }

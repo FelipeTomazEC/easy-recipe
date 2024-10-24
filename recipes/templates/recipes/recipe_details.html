@@ -1,41 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Recipe details</title>
+        <link rel="stylesheet" href="{% static 'recipes/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'recipes/details.css' %}">
+        <title>Easy Recipe - Recipe Details</title>
     </head>
     <body>
         <header>
-            <h6>
-                <a href="{% url "recipes:index" %}">See all recipes</a>
-            </h6>
+            <div class="container">
+                <h1>Recipe Details</h1>
+            </div>
         </header>
-        <main>
-            <h1>{{recipe.name}}</h1>
-            <h2>Cost: {{recipe.get_total_cost}}</h2>
-            <table class="ingredients">
-                <caption>Ingredients</caption>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Amount</th>
-                        <th>Cost</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for recipe_ingredient in recipe.recipeingredient_set.all %}
+        <main class="container">
+            <section class="recipe-details">
+                <h1 class="recipe-name">{{recipe.name}}</h1>
+                <h2 class="recipe-cost">Total Cost: {{recipe.get_total_cost}}</h2>
+            </section>
+
+            <section class="ingredient-details">
+                <table class="ingredients">
+                    <caption>Ingredients</caption>
+                    <thead>
                         <tr>
-                            <td>{{forloop.counter}}</td>
-                            <td>{{recipe_ingredient.ingredient.name}}</td>
-                            <td>{{recipe_ingredient.amount}} {{recipe_ingredient.ingredient.standard_unit}}</td>
-                            <td>{{recipe_ingredient.get_cost}}</td>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Cost</th>
                         </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            <a href="{% url "recipes:edit_recipe" recipe.id%}">Edit Recipe</a>
+                    </thead>
+                    <tbody>
+                        {% for recipe_ingredient in recipe.recipeingredient_set.all %}
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+                                <td>{{recipe_ingredient.ingredient.name}}</td>
+                                <td>{{recipe_ingredient.amount}} {{recipe_ingredient.ingredient.standard_unit}}</td>
+                                <td>{{recipe_ingredient.get_cost}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+            
+            <nav>
+                <a class="button" href="{% url "recipes:edit_recipe" recipe.id%}">Edit Recipe</a>
+                <a class="cancel-button" href="{% url "recipes:index" %}">Go back</a>
+            </nav>
         </main>
     </body>
 </html>

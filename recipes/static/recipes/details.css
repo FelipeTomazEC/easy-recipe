@@ -1,0 +1,55 @@
+.recipe-details  {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.recipe-details h1 {
+    font-size: 4rem;
+}
+
+.recipe-details h2 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.ingredient-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ingredients caption {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.ingredients {
+    width: 60%;
+}
+
+.ingredients td, .ingredients th {
+    padding: 1rem;
+    border: 0.1rem solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ingredients th {
+    font-size: 2rem;
+}
+
+.ingredients td {
+    font-size: 1.7rem;
+}
+
+nav {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    position: fixed;
+    right: 5rem;
+    bottom: 5rem;
+}
+

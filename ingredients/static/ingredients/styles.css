@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 html {
     font-size: 62.5%; /* 1rem = 10px */
 }
@@ -66,7 +70,7 @@ label, fieldset {
     font-weight: bold;
 }
 
-.button {
+.button, .cancel-button {
     display: inline-block;
     text-decoration: none;
     color: white;
@@ -78,10 +82,20 @@ label, fieldset {
     background-color: #2ecc71;
     cursor: pointer;
     border: none;
+    width: 20rem;
+    text-align: center;
 }
 
 .button:hover {
     background-color: #27ae60;
+}
+
+.cancel-button {
+    background-color: #dd3030;
+}
+
+.cancel-button:hover {
+    background-color: #c02c2c;
 }
 
 

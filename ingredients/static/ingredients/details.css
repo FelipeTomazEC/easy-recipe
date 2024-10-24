@@ -1,0 +1,26 @@
+.container, .ingredient-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ingredient-details {
+    gap: 2rem;
+}
+
+.ingredient-details h1 {
+    font-size: 4rem;
+}
+
+.ingredient-details h2 {
+    font-size: 3rem;
+}
+
+.ingredient-details p {
+    font-size: 2rem;
+}
+
+.buttons-container {
+    margin-top: 4rem;
+}
+

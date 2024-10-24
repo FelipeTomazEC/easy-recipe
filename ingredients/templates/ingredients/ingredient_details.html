@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'ingredients/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'ingredients/details.css' %}">
+        <title>Easy Recipe - Ingredient Details</title>
     </head>
     <body>
         <header>
-            <h6>
-                <a href="{% url "ingredients:index" %}">See all ingredients</a>
-            </h6>
+            <div class="container">
+                <h1>Ingredient Details</h1>
+            </div>
         </header>
-        <main>
-            <h1>{{ingredient.name}}</h1>
-            <h2>EAN: {{ingredient.ean}}</h2>
-            <p>Price: {{ingredient.cost_per_unit}} ({{ingredient.standard_amount}} {{ingredient.standard_unit}}{{ingredient.standard_amount|pluralize}})</p>
-            <a href="{% url "ingredients:edit_ingredient" ingredient.ean %}">Edit ingredient</a>
+        <main class="container">
+            <section class="ingredient-details">
+                <h1>Name: {{ingredient.name}}</h1>
+                <h2>EAN: {{ingredient.ean}}</h2>
+                <p>Price: {{ingredient.cost_per_unit}} ({{ingredient.standard_amount}} {{ingredient.standard_unit}}{{ingredient.standard_amount|pluralize}})</p>
+            </section>
+
+            <div class="buttons-container">
+                <a class="button" href="{% url "ingredients:edit_ingredient" ingredient.ean %}">Edit ingredient</a>
+                <a class="cancel-button" href="{% url "ingredients:index" %}">Go back</a>
+            </div>
         </main>
     </body>
 </html>

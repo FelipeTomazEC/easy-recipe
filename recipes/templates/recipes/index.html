@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'recipes/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'recipes/index.css' %}">
         <title>Recipes</title>
     </head>
     <body>
@@ -11,21 +14,26 @@
         </header>
         <main>
             {% if recipe_list %}
-            <ul>
+            <ul class="recipe-list">
                 {% for recipe in  recipe_list %}
                 <li class="recipe-details">
-                    <h2>{{ recipe.name }}</h2>
-                    <p>Number of ingredients: {{recipe.ingredients.count}}</p>
-                    <strong>Total cost: {{recipe.get_total_cost}}</strong>
-                    <a href="{% url "recipes:details" recipe.id%}">See details</a>
+                    <div class="recipe-details">
+                        <h2>{{ recipe.name }}</h2>
+                        <p>Number of ingredients: {{recipe.ingredients.count}}</p>
+                        <strong>Total cost: {{recipe.get_total_cost}}</strong>
+                        <a href="{% url "recipes:details" recipe.id%}">See details</a>
+                    </div>
                 </li>
                 {% endfor %}
             </ul>
             {% else %}
-                <p>No recipes found.</p>
+                <p class="no-recipes-message">No recipes found.</p>
             {% endif %}
-
-            <a href="{% url "recipes:add_recipe" %}">Add new recipe</a>
+            
+            <nav>
+                <a class="button" href="{% url "recipes:add_recipe" %}">Add new recipe</a>
+                <a class="button cancel-button" href="{% url "home:index" %}">Home</a>
+            </nav>
         </main>
     </body>
 </html>

@@ -1,0 +1,108 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f7f8fa;
+    color: #333;
+}
+
+header .container, main {
+    width: 90%;
+    max-width: 120rem; 
+    margin: 0 auto;
+}
+
+main {
+    padding-top: 5rem;
+}
+
+header h1 {
+    font-size: 4rem; 
+    margin-bottom: 1rem; 
+}
+
+header {
+    background-color: #2ecc71;
+    color: white;
+    padding: 2rem 0; 
+    text-align: center;
+    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1); 
+}
+
+input, select, option {
+    padding: 1rem; 
+    width: 30rem; 
+    border: 0.2rem solid #bdc3c7; 
+    border-radius: 0.5rem; 
+    font-size: 2rem; 
+    outline: none;
+}
+
+input:focus {
+    border-color: #2ecc71;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+form div label {
+    margin-bottom: 0.5rem;
+}
+
+label, fieldset {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.button, .cancel-button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 1.5rem 3rem; 
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 0.5rem; 
+    transition: background-color 0.3s;
+    background-color: #2ecc71;
+    cursor: pointer;
+    border: none;
+    width: 20rem;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #27ae60;
+}
+
+.cancel-button {
+    background-color: #dd3030;
+}
+
+.cancel-button:hover {
+    background-color: #c02c2c;
+}
+
+
+fieldset {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 1rem;
+    width: fit-content;
+}

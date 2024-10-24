@@ -16,8 +16,10 @@
             <form action="{% url "ingredients:edit_ingredient" ingredient.ean %}" method="POST">
                 {% csrf_token %}
                 {{ form }}
-                <input class="button" type="submit" value="Save changes">
-                <a class="button cancel-button" href="{% url "ingredients:index" %}">Cancel</a>
+                <div class="action-buttons">
+                    <input class="button" type="submit" value="Save changes">
+                    <a class="button cancel-button" href="{% url "ingredients:index" %}">Cancel</a>
+                </div>
             </form>
         </main>
     </body>

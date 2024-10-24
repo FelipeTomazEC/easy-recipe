@@ -22,4 +22,4 @@ class RecipeIngredient(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
 
     def get_cost(self):
-        return self.amount * self.ingredient.cost_per_unit
+        return self.amount * (self.ingredient.cost_per_unit / self.ingredient.standard_amount)

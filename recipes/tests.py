@@ -22,16 +22,17 @@ def create_test_ingredient(cost, unit = Unit.KILOGRAM, standard_amount = 1,curre
 
 class RecipeIngredientModelTests(TestCase):
     def test_get_cost(self):
-        cost_per_unit = Money(5, 'EUR')
-        standard_unit = Unit.KILOGRAM.value
-        ingredient = Ingredient(standard_unit=standard_unit, cost_per_unit=cost_per_unit)
+        cost_per_unit = Money(1, 'EUR')
+        standard_unit = Unit.GRAM.value
+        standard_amount = 500
+        ingredient = Ingredient(standard_unit=standard_unit, cost_per_unit=cost_per_unit, standard_amount = standard_amount)
 
-        recipe_ingredient_amount = 0.5
+        recipe_ingredient_amount = 100
         recipe_ingredient = RecipeIngredient(ingredient=ingredient, amount=recipe_ingredient_amount)
         
         total_cost = recipe_ingredient.get_cost()
 
-        self.assertEqual(total_cost, Money(2.5, 'EUR'))
+        self.assertEqual(total_cost, Money(0.2, 'EUR'))
 
 class RecipeModelTests(TestCase):
     def test_get_recipe_total_cost(self):

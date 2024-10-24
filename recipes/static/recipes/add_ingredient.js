@@ -8,7 +8,7 @@ function createRecipeIngredient() {
     // Create the label for the ingredient select
     const ingredientLabel = document.createElement('label');
     ingredientLabel.setAttribute('for', 'ingredient');
-    ingredientLabel.textContent = 'Name';
+    ingredientLabel.textContent = 'Ingredient';
     recipeIngredient.appendChild(ingredientLabel);
 
     // Create the select element for ingredients
@@ -44,7 +44,8 @@ function createRecipeIngredient() {
 
     // Create the remove button
     const removeButton = document.createElement('button');
-    removeButton.className = 'remove-ingredient-btn'
+    removeButton.classList.add('remove-ingredient-btn')
+    removeButton.classList.add('cancel-button')
     removeButton.type = 'button';
     removeButton.textContent = 'Remove';
     removeButton.onclick = () => recipeIngredient.remove()

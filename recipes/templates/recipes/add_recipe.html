@@ -4,25 +4,29 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static "recipes/add_ingredient_form.css" %}">
-        <title>Add new recipe</title>
+        <link rel="stylesheet" href="{% static 'recipes/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'recipes/add-recipe.css' %}">
+        <title>Easy Recipe - Add new recipe</title>
     </head>
     <body>
         <header>
-            <h1>Add a new recipe...</h1>
+            <div class="container">
+                <h1>Add a new recipe</h1>
+            </div>
         </header>
         <main>
             <form action="{% url "recipes:add_recipe" %}" method="POST">
                 {% csrf_token %}
-
-                <label for="name">Recipe name</label>
-                <input type="text" name="name" id="name" value={{ name|default:""|safe }}>
-                {% if errors.name %}
+             
+                <div class="recipe-name-input-container">
+                    <label for="name">Recipe name</label>
+                    <input type="text" name="name" id="name" value={{ name|default:""|safe }}>
+                    {% if errors.name %}
                     <span class="error">{{errors.name.0}}</span>
-                {% endif %}
+                    {% endif %}
+                </div>
 
                 <section class="ingredients">
-                    <h2>Ingredients</h2>
                     {% if errors.ingredients %}
                         <span class="error">{{errors.ingredients.0}}</span>
                     {% endif %}
@@ -45,8 +49,14 @@
                         {% endfor %}
                     {% endif %}
                 </section>
-                <button type="button" onclick="createRecipeIngredient()">Add ingredient</button>
-                <input type="submit" value="Save Recipe">
+                
+                <button class="button add-ingredient-button" type="button" onclick="createRecipeIngredient()">Add ingredient</button>
+                
+                <div class="action-buttons">
+                    <input class="button" type="submit" value="Save Recipe">
+                    <a class="cancel-button" href="{% url "recipes:index" %}">Cancel</a>
+                </div>
+                
             </form>
         </main>
         {{ingredient_list|json_script:"ingredient_list"}}

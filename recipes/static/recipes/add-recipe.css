@@ -1,0 +1,30 @@
+.add-ingredient-button {
+    width: fit-content;
+}
+
+.recipe-name-input-container label {
+    font-size: 3rem;
+}
+
+.action-buttons {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    position: fixed;
+    right: 5rem;
+    bottom: 5rem;
+}
+
+.add-ingredient-button {
+    margin-top: 1.5rem;
+}
+
+.remove-ingredient-btn {
+    width: 10rem;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    vertical-align: middle;
+}

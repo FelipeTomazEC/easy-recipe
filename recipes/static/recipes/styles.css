@@ -105,4 +105,10 @@ fieldset {
     gap: 2rem;
     padding: 1rem;
     width: fit-content;
+    align-content: center;
+}
+
+.error {
+    font-size: 2rem;
+    color: #c02c2c;
 }
